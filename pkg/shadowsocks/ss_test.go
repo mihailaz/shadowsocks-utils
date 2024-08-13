@@ -17,7 +17,7 @@ func TestSsParse(t *testing.T) {
 		wantErr bool
 	}{
 		{"success", args{
-			uri: &url.URL{Scheme: "ss", User: url.User("c29tZS1lbmNyaXB0aW9uLW1ldGhvZDpzb21lLXBhc3N3b3JkCg=="),
+			uri: &url.URL{Scheme: "ss", User: url.User("c29tZS1lbmNyaXB0aW9uLW1ldGhvZDpzb21lLXBhc3N3b3JkCg"),
 				Host: "example.com:8080", Path: "/some-path", RawQuery: "param1=value1&param2=value2"}},
 			&Info{EncryptionMethod: "some-encription-method", Password: "some-password",
 				Host: "example.com:8080", Params: map[string][]string{"param1": {"value1"}, "param2": {"value2"}}}, false},

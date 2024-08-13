@@ -17,7 +17,7 @@ func SsParse(uri *url.URL) (*Info, error) {
 	if data == "" {
 		return nil, errors.New("username is empty")
 	}
-	decoded, err := base64.URLEncoding.DecodeString(data)
+	decoded, err := base64.RawURLEncoding.DecodeString(data)
 	if err != nil {
 		return nil, err
 	}
