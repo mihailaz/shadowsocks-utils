@@ -14,4 +14,7 @@ build-ssinfo:
 clean:
 	rm -rf $(ARTIFACTS_DIR)
 
+install:
+	go install -ldflags "-X 'main.build=$(BUILD)' -X 'main.date=$(DATE)'" ./cmd/ssinfo
+
 .PHONY: all build build-ssinfo clean
