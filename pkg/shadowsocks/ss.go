@@ -12,7 +12,7 @@ func SsParse(uri *url.URL) (*Info, error) {
 	if uri.Scheme != "ss" {
 		return nil, errors.New("only support ss://")
 	}
-	slog.Info("parsing", slog.String("url", uri.String()))
+	slog.Debug("parsing", slog.String("url", uri.String()))
 	data := uri.User.Username()
 	if data == "" {
 		return nil, errors.New("username is empty")

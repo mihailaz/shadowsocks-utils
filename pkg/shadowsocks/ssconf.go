@@ -29,10 +29,10 @@ func SsConfParse(uri *url.URL) (*Info, error) {
 	if uri.Scheme != "ssconf" {
 		return nil, fmt.Errorf("invalid scheme, expect ssconf, got: %s", uri.Scheme)
 	}
-	slog.Info("parsing", slog.String("url", uri.String()))
+	slog.Debug("parsing", slog.String("url", uri.String()))
 	uri.Scheme = "https"
 	reqUrl := uri.String()
-	slog.Info("requesting", slog.String("url", reqUrl))
+	slog.Debug("requesting", slog.String("url", reqUrl))
 	req, err := http.NewRequest("GET", reqUrl, nil)
 	if err != nil {
 		return nil, err
